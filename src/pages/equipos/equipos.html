@@ -1,0 +1,82 @@
+﻿<!--
+  Generated template for the EquiposPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>equipos</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="gotoNuevoEquipo()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item-group>
+    <ion-item-divider>A</ion-item-divider>
+    <button ion-item (click)="gotoEquipo()">
+      <ion-avatar item-start>
+        <img src="http://as00.epimg.net/img/comunes/fotos/fichas/equipos/large/42.png">
+      </ion-avatar>
+      <h2>Atletico</h2>
+    </button>
+
+    <button ion-item (click)="gotoEquipo()">
+      <ion-avatar item-start>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Club_Athletic_Bilbao_logo.svg/903px-Club_Athletic_Bilbao_logo.svg.png">
+      </ion-avatar>
+      <h2>Athletic Club</h2>
+    </button>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider>B</ion-item-divider>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="http://as00.epimg.net/img/comunes/fotos/fichas/equipos/large/3.png">
+      </ion-avatar>
+      <h2>Barcelona</h2>
+    </ion-item>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider>R</ion-item-divider>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="http://as01.epimg.net/img/comunes/fotos/fichas/equipos/medium/1.png">
+      </ion-avatar>
+      <h2>Real Madrid</h2>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/12/RC_Celta_de_Vigo_logo.svg/577px-RC_Celta_de_Vigo_logo.svg.png">
+      </ion-avatar>
+      <h2>Real Club Celta de Vigo</h2>
+    </ion-item>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider>S</ion-item-divider>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="http://as00.epimg.net/img/comunes/fotos/fichas/equipos/large/53.png">
+      </ion-avatar>
+      <h2>Sevilla</h2>
+    </ion-item>
+  </ion-item-group>
+
+
+
+
+</ion-content>

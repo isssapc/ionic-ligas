@@ -1,0 +1,168 @@
+﻿<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <ion-select>
+        <ion-option value="Liga inglesa" selected>Liga inglesa</ion-option>
+        <ion-option value="liga2">Liga 2</ion-option>
+        <ion-option value="liga3">Liga 3</ion-option>
+        <ion-option value="liga4">Liga 4</ion-option>
+      </ion-select>
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <div style="padding:5px">
+    <ion-segment [(ngModel)]="pet" color="dark">
+      <ion-segment-button value="Partidos">
+        Partidos
+      </ion-segment-button>
+      <ion-segment-button value="Clasificaciones">
+        Clasificaciones
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <!--spaceBetween="-200px"-->
+  <ion-slides slidesPerView="3" no-margin style="background-color:dimgrey">
+
+    <ion-slide style="background-color:transparent">
+      <!--<span style="background-color:grey">Jornada 1</span>-->
+      Jornada 1
+    </ion-slide>
+
+    <ion-slide style="background-color:transparent">
+    <!--  <span style="background-color:grey">Jornada 2</span>-->
+      Jornada 2
+    </ion-slide>
+
+    <ion-slide style="background-color:transparent">
+     <!-- <span style="background-color:grey">Jornada 3</span>-->
+      Jornada 3
+    </ion-slide>
+    <ion-slide style="background-color:transparent">
+     <!-- <span style="background-color:grey">Jornada 4</span>-->
+      Jornada 4
+    </ion-slide>    
+    <ion-slide style="background-color:transparent">
+      <!-- <span style="background-color:grey">Jornada 4</span>-->
+      Jornada 5
+    </ion-slide>
+    <ion-slide style="background-color:transparent">
+      <!-- <span style="background-color:grey">Jornada 4</span>-->
+      Jornada 6
+    </ion-slide>
+    <ion-slide style="background-color:transparent">
+      <!-- <span style="background-color:grey">Jornada 4</span>-->
+      Jornada 7
+    </ion-slide>
+
+  </ion-slides>
+
+
+</ion-header>
+
+<ion-content>
+
+  <div [ngSwitch]="pet">
+    <div *ngSwitchCase="'Partidos'">
+      <ion-list>
+        <ion-item (click)="gotoPartido()">
+          <ion-thumbnail item-start>
+            <img src="assets/img/speakers/bear.jpg">
+          </ion-thumbnail>
+          <ion-row>
+            <ion-col no-padding no-margin><p text-center no-padding no-margin><strong style="color:black">5 </strong>de junio</p></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col align-items-center text-center><p no-padding no-margin>Equipo 1</p></ion-col>
+            <ion-col no-padding no-margin><h1 text-center no-margin no-padding>1 - 0</h1></ion-col>
+            <ion-col align-items-center text-center><p no-padding no-margin>Equipo 2</p></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col><p text-center no-padding no-margin>Estadio Azteca</p></ion-col>
+          </ion-row>
+          <ion-thumbnail item-end>
+            <img src="assets/img/speakers/duck.jpg">
+          </ion-thumbnail>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div *ngSwitchCase="'Clasificaciones'">
+      <ion-grid>
+
+        <ion-row>
+          <ion-col>Pos</ion-col>
+          <ion-col col-3>Equipo</ion-col>
+          <ion-col>PJ</ion-col>
+          <ion-col>PG</ion-col>
+          <ion-col>PE</ion-col>
+          <ion-col>PP</ion-col>
+          <ion-col>GF</ion-col>
+          <ion-col>GC</ion-col>
+          <ion-col>PTS</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>1</ion-col>
+          <ion-col col-3>Barcelona</ion-col>
+          <ion-col>38</ion-col>
+          <ion-col>29</ion-col>
+          <ion-col>6</ion-col>
+          <ion-col>3</ion-col>
+          <ion-col>106</ion-col>
+          <ion-col>41</ion-col>
+          <ion-col>93</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>2</ion-col>
+          <ion-col col-3>Real Madrid</ion-col>
+          <ion-col>38</ion-col>
+          <ion-col>28</ion-col>
+          <ion-col>6</ion-col>
+          <ion-col>4</ion-col>
+          <ion-col>116</ion-col>
+          <ion-col>37</ion-col>
+          <ion-col>90</ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>3</ion-col>
+          <ion-col col-3>Atlético</ion-col>
+          <ion-col>38</ion-col>
+          <ion-col>23</ion-col>
+          <ion-col>9</ion-col>
+          <ion-col>6</ion-col>
+          <ion-col>70</ion-col>
+          <ion-col>27</ion-col>
+          <ion-col>78</ion-col>
+        </ion-row>
+
+
+        <ion-row>
+          <ion-col>4</ion-col>
+          <ion-col col-3>Sevilla</ion-col>
+          <ion-col>38</ion-col>
+          <ion-col>21</ion-col>
+          <ion-col>9</ion-col>
+          <ion-col>8</ion-col>
+          <ion-col>69</ion-col>
+          <ion-col>49</ion-col>
+          <ion-col>72</ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </div>
+
+
+  </div>
+</ion-content>
