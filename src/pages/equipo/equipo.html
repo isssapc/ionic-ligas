@@ -10,13 +10,18 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+
     <ion-title>equipo</ion-title>
+
     <ion-buttons end>
       <button ion-button icon-only (click)="gotoNuevoJugador()" *ngIf="segmento=='Jugadores'">
         <ion-icon name="add"></ion-icon>
       </button>
+       
     </ion-buttons>
+
   </ion-navbar>
+
   <ion-segment [(ngModel)]="segmento" color="dark">
     <ion-segment-button value="Club">
       Club

@@ -38,4 +38,8 @@ export class LigaPage {
       this.navCtrl.push("NuevaJornadaPage");
   }
 
+  gotoJornada(){
+      this.navCtrl.push("JornadaPage");
+  }
+
 }

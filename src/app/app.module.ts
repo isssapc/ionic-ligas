@@ -37,6 +37,8 @@ import { NuevoPartidoPage } from '../pages/nuevo-partido/nuevo-partido';
 import { NuevaLigaPage } from '../pages/nueva-liga/nueva-liga';
 import { LigaPage } from '../pages/liga/liga';
 import { LigasPage } from '../pages/ligas/ligas';
+import { JornadaPage } from '../pages/jornada/jornada';
+import { ActaArbitralPage } from '../pages/acta-arbitral/acta-arbitral';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
@@ -69,7 +71,10 @@ import { UserData } from '../providers/user-data';
         NuevoPartidoPage,
         NuevaLigaPage,
         LigaPage,
-        LigasPage
+        LigasPage,
+        JornadaPage,
+        ActaArbitralPage
+
 
 
     ],
@@ -98,11 +103,12 @@ import { UserData } from '../providers/user-data';
                 { component: NuevoEquipoPage, name: 'NuevoEquipoPage', segment: 'nuevo-equipo' },
                 { component: NuevoJugadorPage, name: 'NuevoJugadorPage', segment: 'nuevo-jugador' },
                 { component: NuevaJornadaPage, name: 'NuevaJornadaPage', segment: 'nueva-jornada' },
-                { component: NuevoPartidoPage, name: 'NuevoPartigoPage', segment: 'nuevo-partido' },
+                { component: NuevoPartidoPage, name: 'NuevoPartidoPage', segment: 'nuevo-partido' },
                 { component: NuevaLigaPage, name: 'NuevaLigaPage', segment: 'nueva-liga' },
                 { component: LigaPage, name: 'LigaPage', segment: 'liga' },
                 { component: LigasPage, name: 'LigasPage', segment: 'ligas' },
-                
+                { component: JornadaPage, name: 'JornadaPage', segment: 'jornada' },
+                { component: ActaArbitralPage, name: 'ActaArbitralPage', segment: 'acta-arbitral' },
 
             ]
         }),
@@ -135,7 +141,9 @@ import { UserData } from '../providers/user-data';
         NuevoPartidoPage,
         NuevaLigaPage,
         LigaPage,
-        LigasPage
+        LigasPage,
+        JornadaPage,
+        ActaArbitralPage
 
 
     ],

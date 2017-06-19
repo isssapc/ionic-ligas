@@ -30,4 +30,10 @@ export class EquipoPage {
         this.navCtrl.push("NuevoJugadorPage");
     }
 
+     gotoNuevoPartido(){
+        this.navCtrl.push("NuevoPartidoPage");
+    }
+
+   
+
 }

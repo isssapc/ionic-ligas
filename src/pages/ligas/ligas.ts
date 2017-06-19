@@ -24,4 +24,8 @@ export class LigasPage {
   gotoLiga() {
       this.navCtrl.push("LigaPage");
   }
+
+  gotoNuevaLiga(){
+    this.navCtrl.push("NuevaLigaPage");
+  }
 }

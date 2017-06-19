@@ -8,11 +8,41 @@
 
   <ion-navbar>
     <ion-title>jornada</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="gotoNuevoPartido()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+    
+      <ion-list>
+        <ion-item (click)="gotoActaArbitral()">
+          <ion-thumbnail item-start>
+            <img src="assets/img/speakers/bear.jpg">
+          </ion-thumbnail>
+          <ion-row>
+            <ion-col no-padding no-margin><p text-center no-padding no-margin><strong style="color:black">5 </strong>de junio</p></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col align-items-center text-center><p no-padding no-margin>Equipo 1</p></ion-col>
+            <ion-col no-padding no-margin><h1 text-center no-margin no-padding>vs</h1></ion-col>
+            <ion-col align-items-center text-center><p no-padding no-margin>Equipo 2</p></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col><p text-center no-padding no-margin>Estadio Azteca</p></ion-col>
+          </ion-row>
+          <ion-thumbnail item-end>
+            <img src="assets/img/speakers/duck.jpg">
+          </ion-thumbnail>
+        </ion-item>
+      </ion-list>
+    
 
 </ion-content>
