@@ -39,6 +39,7 @@ import { LigaPage } from '../pages/liga/liga';
 import { LigasPage } from '../pages/ligas/ligas';
 import { JornadaPage } from '../pages/jornada/jornada';
 import { ActaArbitralPage } from '../pages/acta-arbitral/acta-arbitral';
+import { PruebaPage } from '../pages/prueba/prueba';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
@@ -73,7 +74,8 @@ import { UserData } from '../providers/user-data';
         LigaPage,
         LigasPage,
         JornadaPage,
-        ActaArbitralPage
+        ActaArbitralPage,
+        PruebaPage
 
 
 
@@ -109,6 +111,7 @@ import { UserData } from '../providers/user-data';
                 { component: LigasPage, name: 'LigasPage', segment: 'ligas' },
                 { component: JornadaPage, name: 'JornadaPage', segment: 'jornada' },
                 { component: ActaArbitralPage, name: 'ActaArbitralPage', segment: 'acta-arbitral' },
+                { component: PruebaPage, name: 'PruebaPage', segment: 'prueba' },
 
             ]
         }),
@@ -143,7 +146,8 @@ import { UserData } from '../providers/user-data';
         LigaPage,
         LigasPage,
         JornadaPage,
-        ActaArbitralPage
+        ActaArbitralPage,
+        PruebaPage
 
 
     ],

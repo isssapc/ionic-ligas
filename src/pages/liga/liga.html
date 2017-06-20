@@ -34,28 +34,29 @@
 
 
     <div *ngSwitchCase="'Jornadas'">
-     <ion-list>
-       <ion-item (click)="gotoJornada()">
-         Jornada 1
-       </ion-item>
-       <ion-item>
-         Jornada 2
-       </ion-item>
-       <ion-item>
-         Jornada 3
-       </ion-item>
-       <ion-item>
-         Jornada 4
-       </ion-item>
-       <ion-item>
-         Jornada 5
-       </ion-item>
-       <ion-item>
-         Jornada 6
-       </ion-item>
-     </ion-list>
+      <ion-list>
+        <ion-item (click)="gotoJornada()">
+          Jornada 1
+        </ion-item>
+        <ion-item>
+          Jornada 2
+        </ion-item>
+        <ion-item>
+          Jornada 3
+        </ion-item>
+        <ion-item>
+          Jornada 4
+        </ion-item>
+        <ion-item>
+          Jornada 5
+        </ion-item>
+        <ion-item>
+          Jornada 6
+        </ion-item>
+      </ion-list>
     </div>
-    <div *ngSwitchCase="'Equipos'">
+
+    <div *ngSwitchCase="'Equipos2'">
 
       <ion-item-group>
         <ion-item-divider>A</ion-item-divider>
@@ -113,6 +114,36 @@
       </ion-item-group>
 
     </div>
+
+
+    <div *ngSwitchCase="'Equipos'">
+
+      <ion-list class="accordion-list">
+
+        <ion-list-header class="grupo" no-lines no-padding *ngFor="let item of informacion; let i=index">
+          <button ion-item detail-none (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">
+            <ion-icon item-left name="arrow-forward" *ngIf="!item.open"></ion-icon>
+            <ion-icon item-left name="arrow-down" *ngIf="item.open"></ion-icon>
+            {{ item.letra }}
+          </button>
+
+          <ion-list *ngIf="item.equipos && item.open" no-padding no-lines>
+            <ion-list-header no-padding *ngFor="let equipo of item.equipos; let j=index">
+              <ion-item  ion-item detail-none class="child-item" text-wrap>
+                <ion-avatar item-start>
+                  <img [src]="equipo.img" alt="">
+                </ion-avatar>
+                <h2>{{ equipo.nombre }}</h2>                
+              </ion-item>
+            </ion-list-header>
+          </ion-list>
+
+        </ion-list-header>
+
+      </ion-list>
+
+    </div>
+
 
 
   </div>

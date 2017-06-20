@@ -1,0 +1,39 @@
+{
+    "elementos": [
+        {
+            "letra": "A",
+            "equipos": [
+                {
+                    "nombre": "Atlético",
+                    "img": "http://as00.epimg.net/img/comunes/fotos/fichas/equipos/large/42.png"
+                },
+                {
+                    "nombre": "Athletic Club",
+                    "img": "https://upload.wikimedia.org/wikipedia/en/thumb/9/98/Club_Athletic_Bilbao_logo.svg/903px-Club_Athletic_Bilbao_logo.svg.png"
+                }
+            ]
+        },
+        {
+            "letra": "B",
+            "equipos": [
+                {
+                    "nombre": "Barcelona",
+                    "img": "http://as00.epimg.net/img/comunes/fotos/fichas/equipos/large/3.png"
+                }
+            ]
+        },
+        {
+            "letra": "R",
+            "equipos": [
+                {
+                    "nombre": "Real Madrid",
+                    "img": "http://as01.epimg.net/img/comunes/fotos/fichas/equipos/medium/1.png"
+                },
+                {
+                    "nombre": "Real Club Celta de Vigo",
+                    "img": "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/RC_Celta_de_Vigo_logo.svg/577px-RC_Celta_de_Vigo_logo.svg.png"
+                }
+            ]
+        }
+    ]
+}

@@ -1,3 +1,38 @@
 page-liga {
 
+    .accordion-list {
+        background: color($colors, light);
+        height: 100%;
+    }
+    .grupo{
+        margin-bottom: 0;
+    }
+    .section {
+        background: #ccc;
+        color: #000;
+        margin-bottom: 4px;
+    }
+    .section-active {
+        background: #ffc400;
+        color: #fff;
+    }
+ 
+    .child {
+        background: #e8e7e6;
+        color: #000;
+        margin-bottom: 4px;
+    }
+    .child-item {
+        background: #f3f2f1;
+        padding: 0px 5px;
+      
+        
+    }
+    .label {
+        margin: 0px;
+    }
+    .list {
+        margin-bottom: 4px;
+    }
+
 }
