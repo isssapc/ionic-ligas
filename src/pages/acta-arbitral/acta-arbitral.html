@@ -10,25 +10,50 @@
 
 <ion-content padding>
 
-
+  <ion-card> 
+  <ion-card-content>
+     <ion-list>
+        <ion-item (click)="gotoActaArbitral()">
+          <ion-thumbnail item-start>
+            <img src="assets/img/speakers/bear.jpg">
+          </ion-thumbnail>
+          <ion-row>
+            <ion-col no-padding no-margin><p text-center no-padding no-margin><strong style="color:black">5 </strong>de junio</p></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col align-items-center text-center><p no-padding no-margin>Equipo 1</p></ion-col>
+            <ion-col no-padding no-margin><h1 text-center no-margin no-padding>vs</h1></ion-col>
+            <ion-col align-items-center text-center><p no-padding no-margin>Equipo 2</p></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col><p text-center no-padding no-margin>Estadio Azteca</p></ion-col>
+          </ion-row>
+          <ion-thumbnail item-end>
+            <img src="assets/img/speakers/duck.jpg">
+          </ion-thumbnail>
+        </ion-item>
+      </ion-list>
+  </ion-card-content>
+</ion-card>
 
   
-    <ion-title>Equipo local</ion-title>
-  
+ <ion-item><h1>Equipo local</h1></ion-item>
+ 
 
   
       <ion-row>
         <ion-col></ion-col>
-        <ion-col>Jugador</ion-col>
-        <ion-col>Goles</ion-col>
-        <ion-col>Faltas</ion-col>
-        <ion-col>T.A.</ion-col>
-        <ion-col>T.R.</ion-col>
+        <ion-col><h4>Jugador</h4></ion-col>
+        <ion-col><h4>Goles</h4></ion-col>
+        <ion-col><h4>Faltas</h4></ion-col>
+        <ion-col><h4>T.A.</h4></ion-col>
+        <ion-col><h4>T.R.</h4></ion-col>
+        
       </ion-row>
  
       <ion-row>
         <ion-col><ion-thumbnail item-start>
-            <img src="http://www.athletic-club.eus/imagenes/fotoperfil/fotoperfil1096.jpg">
+            <img width="80" height="80" src="http://www.athletic-club.eus/imagenes/fotoperfil/fotoperfil1096.jpg">
           </ion-thumbnail></ion-col>
         <ion-col aling-items-center class="col" text-center><p>Gorka Iraizoz Moreno</p></ion-col>
         <ion-col>
@@ -53,12 +78,13 @@
              <ion-item>
             
           <ion-input placeholder="" type="text"></ion-input>
-          </ion-item></ion-col>     
+          </ion-item></ion-col> 
+              
       </ion-row>
 
       <ion-row>
         <ion-col><ion-thumbnail item-start>
-            <img src="http://www.athletic-club.eus/imagenes/fotoperfil/fotoperfil842.jpg">
+            <img width="80" height="80" src="http://www.athletic-club.eus/imagenes/fotoperfil/fotoperfil842.jpg">
           </ion-thumbnail></ion-col>
        <ion-col aling-items-center class="col" text-center><p>Eneko Bóveda Altube</p></ion-col>
         <ion-col>
@@ -88,7 +114,7 @@
 
       <ion-row>
         <ion-col><ion-thumbnail item-start>
-            <img src="http://www.athletic-club.eus/imagenes/fotoperfil/fotoperfil2006.jpg">
+            <img width="80" height="80" src="http://www.athletic-club.eus/imagenes/fotoperfil/fotoperfil2006.jpg">
           </ion-thumbnail></ion-col>
         <ion-col aling-items-center class="col" text-center><p>Aymeric Laporte</p></ion-col>
         <ion-col>
@@ -118,7 +144,7 @@
 
       <ion-row>
         <ion-col><ion-thumbnail item-start>
-            <img src="http://www.athletic-club.eus/imagenes/fotoperfil/fotoperfil880.jpg">
+            <img width="80" height="80" src="http://www.athletic-club.eus/imagenes/fotoperfil/fotoperfil880.jpg">
           </ion-thumbnail></ion-col>
         <ion-col aling-items-center class="col" text-center><p>Javier Eraso Goñi</p></ion-col>
         <ion-col>
@@ -148,7 +174,7 @@
 
       <ion-row>
         <ion-col><ion-thumbnail item-start>
-            <img src="http://www.athletic-club.eus/imagenes/fotoperfil/fotoperfil870.jpg">
+            <img width="80" height="80" src="http://www.athletic-club.eus/imagenes/fotoperfil/fotoperfil870.jpg">
           </ion-thumbnail></ion-col>
         <ion-col aling-items-center class="col" text-center><p>Mikel San José Domínguez</p></ion-col>
         <ion-col>
@@ -176,6 +202,171 @@
           </ion-item></ion-col>     
       </ion-row>
 
+      <div padding></div>
+
+
+<ion-item><h1>Equipo visitante</h1></ion-item>
+ 
+
+  
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col><h4>Jugador</h4></ion-col>
+        <ion-col><h4>Goles</h4></ion-col>
+        <ion-col><h4>Faltas</h4></ion-col>
+        <ion-col><h4>T.A.</h4></ion-col>
+        <ion-col><h4>T.R.</h4></ion-col>
+      </ion-row>
+ 
+      <ion-row>
+        <ion-col><ion-thumbnail item-start>
+            <img width="80" height="80" src="http://www.athletic-club.eus/imagenes/fotoperfil/fotoperfil1096.jpg">
+          </ion-thumbnail></ion-col>
+        <ion-col aling-items-center class="col" text-center><p>Gorka Iraizoz Moreno</p></ion-col>
+        <ion-col>
+           <ion-item>
+            
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item>
+          </ion-col>
+          <ion-col>
+             <ion-item>
+            
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item>
+          </ion-col>
+          <ion-col>
+             <ion-item>
+           
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item>
+          </ion-col>
+          <ion-col>
+             <ion-item>
+            
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item></ion-col>     
+      </ion-row>
+
+      <ion-row>
+        <ion-col><ion-thumbnail item-start>
+            <img width="80" height="80" src="http://www.athletic-club.eus/imagenes/fotoperfil/fotoperfil842.jpg">
+          </ion-thumbnail></ion-col>
+       <ion-col aling-items-center class="col" text-center><p>Eneko Bóveda Altube</p></ion-col>
+        <ion-col>
+           <ion-item>
+            
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item>
+          </ion-col>
+          <ion-col>
+             <ion-item>
+            
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item>
+          </ion-col>
+          <ion-col>
+             <ion-item>
+            
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item>
+          </ion-col>
+          <ion-col>
+             <ion-item>
+            
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item></ion-col>     
+      </ion-row>
+
+      <ion-row>
+        <ion-col><ion-thumbnail item-start>
+            <img width="80" height="80" src="http://www.athletic-club.eus/imagenes/fotoperfil/fotoperfil2006.jpg">
+          </ion-thumbnail></ion-col>
+        <ion-col aling-items-center class="col" text-center><p>Aymeric Laporte</p></ion-col>
+        <ion-col>
+           <ion-item>
+           
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item>
+          </ion-col>
+          <ion-col>
+             <ion-item>
+            
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item>
+          </ion-col>
+          <ion-col>
+             <ion-item>
+           
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item>
+          </ion-col>
+          <ion-col>
+             <ion-item>
+           
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item></ion-col>     
+      </ion-row>
+
+      <ion-row>
+        <ion-col><ion-thumbnail item-start>
+            <img width="80" height="80" src="http://www.athletic-club.eus/imagenes/fotoperfil/fotoperfil880.jpg">
+          </ion-thumbnail></ion-col>
+        <ion-col aling-items-center class="col" text-center><p>Javier Eraso Goñi</p></ion-col>
+        <ion-col>
+           <ion-item>
+            
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item>
+          </ion-col>
+          <ion-col>
+             <ion-item>
+            
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item>
+          </ion-col>
+          <ion-col>
+             <ion-item>
+           
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item>
+          </ion-col>
+          <ion-col>
+             <ion-item>
+          
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item></ion-col>     
+      </ion-row>
+
+      <ion-row>
+        <ion-col><ion-thumbnail item-start>
+            <img width="80" height="80" src="http://www.athletic-club.eus/imagenes/fotoperfil/fotoperfil870.jpg">
+          </ion-thumbnail></ion-col>
+        <ion-col aling-items-center class="col" text-center><p>Mikel San José Domínguez</p></ion-col>
+        <ion-col>
+           <ion-item>
+        
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item>
+          </ion-col>
+          <ion-col>
+             <ion-item>
+     
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item>
+          </ion-col>
+          <ion-col>
+             <ion-item>
+            
+             <ion-input placeholder="" type="text"></ion-input>
+          </ion-item>
+          </ion-col>
+          <ion-col>
+             <ion-item>
+            
+          <ion-input placeholder="" type="text"></ion-input>
+          </ion-item></ion-col>     
+      </ion-row>
       
   
   <button ion-button block>aceptar</button>
