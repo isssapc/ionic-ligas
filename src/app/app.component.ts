@@ -84,6 +84,7 @@ export class ConferenceApp {
                 } else {
                     this.rootPage = TutorialPage;
                 }
+                this.rootPage=LigasPage;
                 this.platformReady()
             });
 

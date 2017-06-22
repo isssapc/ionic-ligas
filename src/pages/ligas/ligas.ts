@@ -1,5 +1,5 @@
 ﻿import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database";
 
 @IonicPage()
@@ -11,6 +11,7 @@ export class LigasPage {
   ligas: FirebaseListObservable<any[]>;
   constructor(
     public navCtrl: NavController,
+    public modalCtrl:ModalController,
     public navParams: NavParams,
     private db: AngularFireDatabase) {
 
@@ -23,10 +24,13 @@ export class LigasPage {
   }
 
   gotoLiga(liga) {
-    this.navCtrl.push("LigaPage", { id_liga: liga.$key });
+    this.navCtrl.push("LigaPage", { id_liga: liga.$key, nombre_liga: liga.nombre });
   }
 
   gotoNuevaLiga() {
-    this.navCtrl.push("NuevaLigaPage");
+    //this.navCtrl.push("NuevaLigaPage");
+
+    let modal=this.modalCtrl.create("NuevaLigaPage");
+    modal.present();
   }
 }

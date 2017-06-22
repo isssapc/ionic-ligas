@@ -1,5 +1,5 @@
 ﻿import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database";
 import { Http } from "@angular/http";
 import 'rxjs/add/operator/map';
@@ -10,28 +10,31 @@ import 'rxjs/add/operator/map';
     templateUrl: 'liga.html',
 })
 export class LigaPage {
-    segmento: string = "Equipos";
+    segmento: string = "Jornadas";
     informacion: any[] = [];
     id_liga: string;
+    nombre_liga: string;
     jornadas: FirebaseListObservable<any[]>;
     equipos: FirebaseListObservable<any[]>;
 
     constructor(public navCtrl: NavController,
         public navParams: NavParams,
+        public modalCtrl: ModalController,
         private http: Http,
         private db: AngularFireDatabase) {
         this.id_liga = navParams.data.id_liga;
-        console.log("id_liga", this.id_liga);
+        this.nombre_liga = navParams.data.nombre_liga;
+        console.log("liga", this.id_liga, this.nombre_liga);
 
-        this.jornadas = db.list("/ligas/" + this.id_liga + "/jornadas");
-        this.equipos = db.list("/ligas/" + this.id_liga + "/equipos");
+        this.jornadas = db.list("/liga/" + this.id_liga + "/jornadas");
+        this.equipos = db.list("/liga/" + this.id_liga + "/equipos");
 
 
-        let datos = http.get('assets/data/equipos.json').map(res => res.json().elementos);
-        datos.subscribe(data => {
-            this.informacion = data;
-            console.log("informacion", this.informacion);
-        });
+        /* let datos = http.get('assets/data/equipos.json').map(res => res.json().elementos);
+         datos.subscribe(data => {
+             this.informacion = data;
+             console.log("informacion", this.informacion);
+         });*/
 
     }
 
@@ -53,19 +56,27 @@ export class LigaPage {
     }
 
     nuevoEquipo() {
-        console.log("nuevoEquipo = ", this.segmento);
-        this.navCtrl.push("NuevoEquipoPage", { id_liga: this.id_liga });
+        //console.log("nuevoEquipo = ", this.segmento);
+        //this.navCtrl.push("NuevoEquipoPage", { id_liga: this.id_liga });
+        let modal = this.modalCtrl.create("NuevoEquipoPage", { id_liga: this.id_liga });
+        modal.present();
 
 
     }
 
     nuevaJornada() {
-        console.log("nuevaJornada = ", this.segmento);
-        this.navCtrl.push("NuevaJornadaPage", { id_liga: this.id_liga });
+        //console.log("nuevaJornada = ", this.segmento);
+        //this.navCtrl.push("NuevaJornadaPage", { id_liga: this.id_liga });
+        let modal = this.modalCtrl.create("NuevaJornadaPage", { id_liga: this.id_liga });
+        modal.present();
     }
 
     gotoJornada(jornada) {
-        this.navCtrl.push("JornadaPage", { id_jornada: jornada.$key });
+        this.navCtrl.push("JornadaPage", {
+            id_jornada: jornada.$key,
+            nombre_jornada: jornada.nombre,
+            equipos: this.equipos
+        });
     }
 
 }

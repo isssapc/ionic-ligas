@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { AngularFireDatabase } from "angularfire2/database";
 
 
@@ -14,6 +14,7 @@ export class NuevoEquipoPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
+    public viewCtrl:ViewController,
     private db: AngularFireDatabase) {
     this.id_liga = navParams.data.id_liga;
   }
@@ -23,10 +24,14 @@ export class NuevoEquipoPage {
   }
 
   crearEquipo() {
-    const equipos = this.db.list("/ligas/" + this.id_liga + "/equipos");
+    const equipos = this.db.list("/liga/" + this.id_liga + "/equipos");
     equipos.push(this.equipo);
 
     this.equipo = {};
+  }
+
+    cerrar(){
+    this.viewCtrl.dismiss();
   }
 
 }

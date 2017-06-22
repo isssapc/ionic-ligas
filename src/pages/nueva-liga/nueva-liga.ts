@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, Platform } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database";
 
 @IonicPage()
@@ -9,14 +9,14 @@ import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/databa
 })
 export class NuevaLigaPage {
 
-  liga: any={
-    
-  };
+  liga: any={};
 
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
+    public platform:Platform,
+    public viewCtrl:ViewController,
     private db: AngularFireDatabase) {
   }
 
@@ -29,6 +29,10 @@ export class NuevaLigaPage {
     ligas.push(this.liga);
     
     this.liga={};
+  }
+
+  cerrar(){
+    this.viewCtrl.dismiss();
   }
 
 }
