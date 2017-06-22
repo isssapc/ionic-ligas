@@ -1,24 +1,32 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFireDatabase } from "angularfire2/database";
 
-/**
- * Generated class for the NuevoEquipoPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+
 @IonicPage()
 @Component({
   selector: 'page-nuevo-equipo',
   templateUrl: 'nuevo-equipo.html',
 })
 export class NuevoEquipoPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  id_liga: string;
+  equipo: any = {};
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private db: AngularFireDatabase) {
+    this.id_liga = navParams.data.id_liga;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NuevoEquipoPage');
+  }
+
+  crearEquipo() {
+    const equipos = this.db.list("/ligas/" + this.id_liga + "/equipos");
+    equipos.push(this.equipo);
+
+    this.equipo = {};
   }
 
 }

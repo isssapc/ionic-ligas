@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database";
 
-/**
- * Generated class for the NuevaLigaPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-nueva-liga',
@@ -14,11 +9,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NuevaLigaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  liga: any={
+    
+  };
+
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private db: AngularFireDatabase) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NuevaLigaPage');
+  }
+
+  crearLiga() {
+    const ligas = this.db.list("/ligas");
+    ligas.push(this.liga);
+    
+    this.liga={};
   }
 
 }

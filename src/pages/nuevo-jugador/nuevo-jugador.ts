@@ -2,6 +2,7 @@
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Camera } from '@ionic-native/camera';
+import { AngularFireDatabase } from "angularfire2/database";
 /**
  * Generated class for the NuevoJugadorPage page.
  *
@@ -15,24 +16,37 @@ import { Camera } from '@ionic-native/camera';
 })
 export class NuevoJugadorPage {
 
-    @ViewChild('fileInput') fileInput;
-    isReadyToSave: boolean;
+  @ViewChild('fileInput') fileInput;
+  isReadyToSave: boolean;
 
-    item: any;
+  item: any;
 
+  id_liga: string;
+  id_equipo: string;
+  jugador: any = {};
   form: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, formBuilder: FormBuilder, public camera: Camera) {
-      this.form = formBuilder.group({
-          profilePic: [''],
-          name: ['', Validators.required],
-          about: ['']
-      });
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public viewCtrl: ViewController,
+    formBuilder: FormBuilder,
+    public camera: Camera,
+    private db: AngularFireDatabase) {
+    this.form = formBuilder.group({
+      profilePic: [''],
+      name: ['', Validators.required],
+      about: ['']
+    });
 
-      // Watch the form for changes, and
-      this.form.valueChanges.subscribe((v) => {
-          this.isReadyToSave = this.form.valid;
-      });
+    // Watch the form for changes, and
+    this.form.valueChanges.subscribe((v) => {
+      this.isReadyToSave = this.form.valid;
+    });
+
+    this.id_liga = navParams.data.id_liga;
+    this.id_equipo = navParams.data.id_equipo;
+    console.log("constructor nuevo jugador", this.id_liga, this.id_equipo);
 
   }
 
@@ -40,7 +54,14 @@ export class NuevoJugadorPage {
     console.log('ionViewDidLoad NuevoJugadorPage');
   }
 
-    processWebImage(event) {
+  crearJugador() {
+    const jugadores = this.db.list("/ligas/" + this.id_liga + "/equipos/" + this.id_equipo+"/jugadores");
+    jugadores.push(this.jugador);
+
+    this.jugador = {};
+  }
+
+  processWebImage(event) {
     let reader = new FileReader();
     reader.onload = (readerEvent) => {
 
@@ -51,7 +72,7 @@ export class NuevoJugadorPage {
     reader.readAsDataURL(event.target.files[0]);
   }
 
-    getPicture() {
+  getPicture() {
     if (Camera['installed']()) {
       this.camera.getPicture({
         destinationType: this.camera.DestinationType.DATA_URL,

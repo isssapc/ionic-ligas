@@ -1,12 +1,7 @@
-﻿<!--
-  Generated template for the LigaPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+﻿
 <ion-header>
   <ion-navbar>
-    <ion-title>liga</ion-title>
+    <ion-title>Liga</ion-title>
     <ion-buttons end>
       <button ion-button icon-only *ngIf="segmento=='Equipos'" (click)="nuevoEquipo()">
         <ion-icon name="add"></ion-icon>
@@ -35,25 +30,21 @@
 
     <div *ngSwitchCase="'Jornadas'">
       <ion-list>
-        <ion-item (click)="gotoJornada()">
-          Jornada 1
-        </ion-item>
-        <ion-item>
-          Jornada 2
-        </ion-item>
-        <ion-item>
-          Jornada 3
-        </ion-item>
-        <ion-item>
-          Jornada 4
-        </ion-item>
-        <ion-item>
-          Jornada 5
-        </ion-item>
-        <ion-item>
-          Jornada 6
-        </ion-item>
+        <button ion-item (click)="gotoJornada(jornada)" *ngFor="let jornada of jornadas|async">
+          {{jornada.nombre}}
+        </button>
+
       </ion-list>
+    </div>
+
+    <div *ngSwitchCase="'Equipos'">
+      <ion-item (click)="gotoEquipo(equipo)" *ngFor="let equipo of equipos|async">
+        <ion-avatar item-start>
+          <img src="http://as00.epimg.net/img/comunes/fotos/fichas/equipos/large/42.png">
+        </ion-avatar>
+        <h2>{{equipo.nombre}}</h2>
+        <p>{{equipo.administrador}}</p>
+      </ion-item>
     </div>
 
     <div *ngSwitchCase="'Equipos2'">
@@ -116,7 +107,7 @@
     </div>
 
 
-    <div *ngSwitchCase="'Equipos'">
+    <div *ngSwitchCase="'Equipos2'">
 
       <ion-list class="accordion-list">
 
@@ -129,11 +120,11 @@
 
           <ion-list *ngIf="item.equipos && item.open" no-padding no-lines>
             <ion-list-header no-padding *ngFor="let equipo of item.equipos; let j=index">
-              <ion-item  ion-item detail-none class="child-item" text-wrap>
+              <ion-item ion-item detail-none class="child-item" text-wrap>
                 <ion-avatar item-start>
                   <img [src]="equipo.img" alt="">
                 </ion-avatar>
-                <h2>{{ equipo.nombre }}</h2>                
+                <h2>{{ equipo.nombre }}</h2>
               </ion-item>
             </ion-list-header>
           </ion-list>

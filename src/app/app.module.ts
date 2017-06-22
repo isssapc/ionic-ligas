@@ -2,6 +2,9 @@
 import { HttpModule } from '@angular/http';
 import { NgModule, ErrorHandler } from '@angular/core';
 
+import { AngularFireModule } from "angularfire2";
+import { environment } from "../environments/environment";
+
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser';
@@ -43,6 +46,7 @@ import { PruebaPage } from '../pages/prueba/prueba';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
+import { AngularFireDatabaseModule } from "angularfire2/database";
 
 
 @NgModule({
@@ -83,6 +87,8 @@ import { UserData } from '../providers/user-data';
     imports: [
         BrowserModule,
         HttpModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireDatabaseModule,
         IonicModule.forRoot(ConferenceApp, {}, {
             links: [
                 { component: TabsPage, name: 'TabsPage', segment: 'tabs' },

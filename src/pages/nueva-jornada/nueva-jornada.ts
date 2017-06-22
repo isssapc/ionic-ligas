@@ -1,24 +1,31 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database";
 
-/**
- * Generated class for the NuevaJornadaPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-nueva-jornada',
   templateUrl: 'nueva-jornada.html',
 })
 export class NuevaJornadaPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  jornada: any = {};
+  id_liga: string;
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private db: AngularFireDatabase) {
+    this.id_liga = navParams.data.id_liga;
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NuevaJornadaPage');
+  }
+  crearJornada() {
+    const jornadas = this.db.list("/ligas/" + this.id_liga + "/jornadas");
+    jornadas.push(this.jornada);
+
+    this.jornada = {};
+
   }
 
 }

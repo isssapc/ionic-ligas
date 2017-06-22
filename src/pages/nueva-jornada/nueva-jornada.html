@@ -18,13 +18,11 @@
   <ion-list>
     <ion-item>
       <ion-label color="primary" stacked>Nombre de la jornada</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="jornada.nombre"></ion-input>
     </ion-item>
   </ion-list>
 
-  <button ion-button full>
-    Guardar
-  </button>
+  <button ion-button full (click)="crearJornada()">Guardar</button>
 
 
 </ion-content>
