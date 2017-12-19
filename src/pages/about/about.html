@@ -31,26 +31,38 @@
   </div>
 
   <!--spaceBetween="-200px"-->
-  <ion-slides slidesPerView="3" no-margin style="background-color:dimgrey">
+  <ion-slides 
+  [slidesPerView]="3" 
+  loop="false"
+  initialSlide="0"
+  centeredSlides="true"
+  (ionSlideTap)="slideTap($event)"
+  no-margin 
+  style="background-color:dimgrey" 
+  (ionSlideDidChange)="slideChanged()">
 
-    <ion-slide style="background-color:transparent">
+    <ion-slide #slide0 style="background-color:red">
       <!--<span style="background-color:grey">Jornada 1</span>-->
+      Jornada 0
+    </ion-slide>
+
+    <ion-slide style="background-color:green">
+    <!--  <span style="background-color:grey">Jornada 2</span>-->
       Jornada 1
     </ion-slide>
 
-    <ion-slide style="background-color:transparent">
-    <!--  <span style="background-color:grey">Jornada 2</span>-->
+    <ion-slide style="background-color:yellow">
+     <!-- <span style="background-color:grey">Jornada 3</span>-->
       Jornada 2
     </ion-slide>
-
-    <ion-slide style="background-color:transparent">
-     <!-- <span style="background-color:grey">Jornada 3</span>-->
-      Jornada 3
-    </ion-slide>
-    <ion-slide style="background-color:transparent">
+    <ion-slide style="background-color:blue">
      <!-- <span style="background-color:grey">Jornada 4</span>-->
-      Jornada 4
+      Jornada 3
     </ion-slide>    
+    <ion-slide style="background-color:transparent">
+      <!-- <span style="background-color:grey">Jornada 4</span>-->
+      Jornada 4
+    </ion-slide>
     <ion-slide style="background-color:transparent">
       <!-- <span style="background-color:grey">Jornada 4</span>-->
       Jornada 5
@@ -58,10 +70,6 @@
     <ion-slide style="background-color:transparent">
       <!-- <span style="background-color:grey">Jornada 4</span>-->
       Jornada 6
-    </ion-slide>
-    <ion-slide style="background-color:transparent">
-      <!-- <span style="background-color:grey">Jornada 4</span>-->
-      Jornada 7
     </ion-slide>
 
   </ion-slides>
@@ -73,6 +81,9 @@
 
   <div [ngSwitch]="pet">
     <div *ngSwitchCase="'Partidos'">
+
+        <button ion-button (click)="getIndex(slide0)">slide index</button>
+
       <ion-list>
         <ion-item (click)="gotoPartido()">
           <ion-thumbnail item-start>

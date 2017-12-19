@@ -1,5 +1,6 @@
 {
   "name": "conference",
   "app_id": "36214529",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "integrations": {}
 }
